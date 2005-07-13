@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
-rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.*a
+rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 
 %find_lang %{name}-2.4
 
