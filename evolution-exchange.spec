@@ -26,7 +26,8 @@ Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package adds support for Microsoft Exchange 2000 and 2003 to Evolution.
+This package adds support for Microsoft Exchange 2000 and 2003 to
+Evolution.
 
 %description -l pl
 Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
