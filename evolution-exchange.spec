@@ -1,5 +1,5 @@
 Summary:	Microsoft Exchange support for Evolution
-Summary(pl):	Obs³uga Microsoft Exchange dla Evolution
+Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
 Version:	2.3.5
 Release:	0.1
