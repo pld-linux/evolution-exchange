@@ -1,3 +1,10 @@
+# 
+# configure: WARNING:
+# No NTLM support in OpenLDAP; Plaintext password authentication will be
+# used when connecting to the Global Catalog server. Consider installing
+# the evo-openldap package, or building OpenLDAP with the patch in
+# docs/openldap-ntlm.diff
+#
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
@@ -11,6 +18,7 @@ BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	evolution-data-server-devel >= 1.3.1
+BuildRequires:	evolution-devel >= 2.3.5.1
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	heimdal-devel >= 0.7
 BuildRequires:	intltool
@@ -20,7 +28,7 @@ BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.3.5
+Requires:	evolution >= 2.3.5.1
 Requires:	gtk+2 >= 2:2.6.4
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -61,20 +69,13 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-#post
-#gconf_schema_install evolution-webcal.schemas
-
-#preun
-#gconf_schema_uninstall evolution-webcal.schemas
-
 %files -f %{name}-2.4.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README 
 %attr(755,root,root) %{_bindir}/ximian-connector-setup-*
-%attr(755,root,root) %{_libdir}/evolution/*/evolution-exchange-storage
-%{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/evolution-data-server-*/camel-providers/*.so
-#%attr(755,root,root) %{_libdir}/evolution/*/*.so.*
-%{_libdir}/evolution-data-server-*/camel-providers/*.urls
+%attr(755,root,root) %{_libdir}/evolution/*/evolution-exchange-storage
 %{_datadir}/%{name}
 %{_gtkdocdir}/*
+%{_libdir}/bonobo/servers/*
+%{_libdir}/evolution-data-server-*/camel-providers/*.urls
