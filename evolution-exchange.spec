@@ -8,27 +8,27 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.3.5
+Version:	2.3.7
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	c482766dd37172d59bca602fd1d02a2d
+# Source0-md5:	778cd9ce1f2a2b2c8326465b66604467
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.3.1
-BuildRequires:	evolution-devel >= 2.3.5.1
+BuildRequires:	evolution-data-server-devel >= 1.3.7-2
+BuildRequires:	evolution-devel >= 2.3.7-2
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	heimdal-devel >= 0.7
 BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.11.0
-BuildRequires:	libsoup-devel >= 2.2.3
+BuildRequires:	libsoup-devel >= 2.2.5
 BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.3.5.1
+Requires:	evolution >= 2.3.7-2
 Requires:	gtk+2 >= 2:2.6.4
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,7 +50,6 @@ Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
 %configure \
 	--with-openlda-=/usr \
 	--with-krb5=/usr \
-	--disable-schemas-install \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -58,8 +57,7 @@ Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
