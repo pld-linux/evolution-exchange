@@ -8,28 +8,28 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.3.7
-Release:	0.1
+Version:	2.4.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	778cd9ce1f2a2b2c8326465b66604467
+Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.4/%{name}-%{version}.tar.bz2
+# Source0-md5:	0120610242240a563ef164a668a14b19
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.3.7-2
-BuildRequires:	evolution-devel >= 2.3.7-2
-BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	evolution-data-server-devel >= 1.4.0
+BuildRequires:	evolution-devel >= 2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	heimdal-devel >= 0.7
 BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.11.0
-BuildRequires:	libsoup-devel >= 2.2.5
+BuildRequires:	libgnomeui-devel >= 2.12.0
+BuildRequires:	libsoup-devel >= 2.2.6.1
 BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.3.7-2
-Requires:	gtk+2 >= 2:2.6.4
+Requires:	evolution >= 2.4.0
+Requires:	gtk+2 >= 2:2.8.3
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
