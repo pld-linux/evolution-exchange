@@ -8,16 +8,16 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.4.0
+Version:	2.4.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	0120610242240a563ef164a668a14b19
+# Source0-md5:	be61e4e8cfc64650c214525c5a615ed6
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.4.0
+BuildRequires:	evolution-data-server-devel >= 1.4.1
 BuildRequires:	evolution-devel >= 2.4.0
 BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	heimdal-devel >= 0.7
@@ -28,7 +28,7 @@ BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.4.0
+Requires:	evolution >= 2.4.1
 Requires:	gtk+2 >= 2:2.8.3
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
