@@ -8,12 +8,12 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.4.1
+Version:	2.4.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	be61e4e8cfc64650c214525c5a615ed6
+# Source0-md5:	67802f9c0be1528edaa0612188588914
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -44,6 +44,8 @@ Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
 %setup -q
 
 %build
+%{__intltoolize}
+%{__glib_gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
