@@ -8,12 +8,12 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.6.1
+Version:	2.7.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	027cc03c5d8f95f4eb26603781e49816
+Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	a9081da7513ff1438821e8e739462cb6
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -64,12 +64,12 @@ rm -rf $RPM_BUILD_ROOT
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 
-%find_lang %{name}-2.6
+%find_lang %{name}-2.7
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}-2.6.lang
+%files -f %{name}-2.7.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README 
 %attr(755,root,root) %{_bindir}/ximian-connector-setup-*
