@@ -12,8 +12,8 @@ Version:	2.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	a9081da7513ff1438821e8e739462cb6
+Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	027cc03c5d8f95f4eb26603781e49816
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
