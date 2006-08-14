@@ -5,31 +5,37 @@
 # the evo-openldap package, or building OpenLDAP with the patch in
 # docs/openldap-ntlm.diff
 #
+%define	filterout_ld	-Wl,--as-needed
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.6.0
+Version:	2.7.91
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	f83177e571fdac31e6d32904a46a2029
-BuildRequires:	GConf2-devel
+Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	2103cce17b5da9851e72014c2e94faeb
+BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.6.0
-BuildRequires:	evolution-devel >= 2.6.0
-BuildRequires:	gtk+2-devel >= 2:2.8.12
+BuildRequires:	evolution-data-server-devel >= 1.7.91
+BuildRequires:	evolution-devel >= 2.7.91
+BuildRequires:	gtk+2-devel >= 2:2.10.1
+BuildRequires:	gtk-doc >= 1.7
 BuildRequires:	heimdal-devel >= 0.7
-BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.13.3
-BuildRequires:	libsoup-devel >= 2.2.7
+BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libbonobo-devel >= 2.15.2
+BuildRequires:	libglade2-devel >= 2.6.0
+BuildRequires:	libgnomeprint-devel >= 2.12.1
+BuildRequires:	libgnomeui-devel >= 2.15.91
+BuildRequires:	libsoup-devel >= 2.2.96
+BuildRequires:	libxml2-devel >= 2.6.26
 BuildRequires:	openldap-devel >= 2.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,preun):	GConf2
-Requires:	evolution >= 2.6.0
-Requires:	gtk+2 >= 2:2.8.12
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires:	evolution >= 2.7.91
+Requires:	gtk+2 >= 2:2.10.1
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,14 +50,16 @@ Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__glib_gettextize}
+%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
-	--with-openlda-=/usr \
+	--with-openldap=/usr \
 	--with-krb5=/usr \
+	--disable-schemas-install \
+	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -61,18 +69,17 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 
-%find_lang %{name}-2.6
+%find_lang %{name}-2.8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}-2.6.lang
+%files -f %{name}-2.8.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README 
-%attr(755,root,root) %{_bindir}/ximian-connector-setup-*
+%attr(755,root,root) %{_bindir}/exchange-connector-setup-*
 %attr(755,root,root) %{_libdir}/evolution-data-server-*/camel-providers/*.so
 %attr(755,root,root) %{_libdir}/evolution/*/evolution-exchange-storage
 %{_datadir}/%{name}
