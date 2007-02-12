@@ -7,7 +7,7 @@
 #
 %define	filterout_ld	-Wl,--as-needed
 Summary:	Microsoft Exchange support for Evolution
-Summary(pl):	Wsparcie dla Microsoft Exchange w Evolution
+Summary(pl.UTF-8):   Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
 Version:	2.7.92
 Release:	1
@@ -43,8 +43,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package adds support for Microsoft Exchange 2000 and 2003 to
 Evolution.
 
-%description -l pl
-Ten pakiet dodaje do Evolution obs³ugê Microsoft Exchange 2000 i 2003.
+%description -l pl.UTF-8
+Ten pakiet dodaje do Evolution obsÅ‚ugÄ™ Microsoft Exchange 2000 i 2003.
 
 %prep
 %setup -q
