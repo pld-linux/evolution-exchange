@@ -7,7 +7,7 @@
 #
 %define	filterout_ld	-Wl,--as-needed
 Summary:	Microsoft Exchange support for Evolution
-Summary(pl.UTF-8):   Wsparcie dla Microsoft Exchange w Evolution
+Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
 Version:	2.8.1
 Release:	2
