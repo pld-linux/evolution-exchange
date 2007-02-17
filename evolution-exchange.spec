@@ -9,33 +9,33 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.8.1
-Release:	2
+Version:	2.8.3
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	f4dfdfed72eb705adefbaff0b575fb10
-BuildRequires:	GConf2-devel >= 2.14.0
+# Source0-md5:	8a6be6640c7824285088f6a2e98f12a4
+BuildRequires:	GConf2-devel >= 2.16.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.8.1
-BuildRequires:	evolution-devel >= 2.8.1
-BuildRequires:	gtk+2-devel >= 2:2.10.6
-BuildRequires:	gtk-doc >= 1.7
+BuildRequires:	evolution-data-server-devel >= 1.8.3
+BuildRequires:	evolution-devel >= 2.8.3
+BuildRequires:	gtk+2-devel >= 2:2.10.9
+BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	heimdal-devel >= 0.7
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	intltool >= 0.35.4
 BuildRequires:	libbonobo-devel >= 2.16.0
 BuildRequires:	libglade2-devel >= 2.6.0
 BuildRequires:	libgnomeprint-devel >= 2.12.1
-BuildRequires:	libgnomeui-devel >= 2.16.0
-BuildRequires:	libsoup-devel >= 2.2.96
-BuildRequires:	libxml2-devel >= 2.6.26
+BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	libsoup-devel >= 2.2.99
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	openldap-devel >= 2.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	evolution >= 2.8.1
-Requires:	gtk+2 >= 2:2.10.6
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires:	evolution >= 2.8.3
+Requires:	gtk+2 >= 2:2.10.9
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
