@@ -1,4 +1,4 @@
-# 
+#
 # configure: WARNING:
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -9,32 +9,32 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.8.3
+Version:	2.9.92
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	8a6be6640c7824285088f6a2e98f12a4
-BuildRequires:	GConf2-devel >= 2.16.0
+Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	b1eed1fa14634c6591d8b149bf30cdc1
+BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.8.3
-BuildRequires:	evolution-devel >= 2.8.3
+BuildRequires:	evolution-data-server-devel >= 1.9.92
+BuildRequires:	evolution-devel >= 2.9.92
 BuildRequires:	gtk+2-devel >= 2:2.10.9
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	heimdal-devel >= 0.7
-BuildRequires:	intltool >= 0.35.4
-BuildRequires:	libbonobo-devel >= 2.16.0
+BuildRequires:	intltool >= 0.35.5
+BuildRequires:	libbonobo-devel >= 2.17.92
 BuildRequires:	libglade2-devel >= 2.6.0
-BuildRequires:	libgnomeprint-devel >= 2.12.1
-BuildRequires:	libgnomeui-devel >= 2.16.1
-BuildRequires:	libsoup-devel >= 2.2.99
+BuildRequires:	libgnomeprint-devel >= 2.17.92
+BuildRequires:	libgnomeui-devel >= 2.17.92
+BuildRequires:	libsoup-devel >= 2.2.100
 BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	openldap-devel >= 2.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires:	evolution >= 2.8.3
+Requires(post,preun):	GConf2
+Requires:	evolution >= 2.9.92
 Requires:	gtk+2 >= 2:2.10.9
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -71,14 +71,21 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 
-%find_lang %{name}-2.8
+%find_lang %{name}-2.10
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}-2.8.lang
+%post
+%gconf_schema_install apps_exchange_addressbook-2.10.schemas
+
+%preun
+%gconf_schema_uninstall apps_exchange_addressbook-2.10.schemas
+
+%files -f %{name}-2.10.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README 
+%doc AUTHORS ChangeLog NEWS README
+%{_sysconfdir}/gconf/schemas/apps_exchange_addressbook-2.10.schemas
 %attr(755,root,root) %{_bindir}/exchange-connector-setup-*
 %attr(755,root,root) %{_libdir}/evolution-data-server-*/camel-providers/*.so
 %attr(755,root,root) %{_libdir}/evolution/*/evolution-exchange-storage
