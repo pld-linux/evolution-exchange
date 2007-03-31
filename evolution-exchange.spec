@@ -10,7 +10,7 @@ Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
 Version:	2.10.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.10/%{name}-%{version}.tar.bz2
@@ -22,7 +22,7 @@ BuildRequires:	evolution-data-server-devel >= 1.10.0
 BuildRequires:	evolution-devel >= 2.10.0
 BuildRequires:	gtk+2-devel >= 2:2.10.10
 BuildRequires:	gtk-doc >= 1.8
-BuildRequires:	heimdal-devel >= 0.7
+BuildRequires:	krb5-devel
 BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libbonobo-devel >= 2.18.0
 BuildRequires:	libglade2-devel >= 2.6.0
