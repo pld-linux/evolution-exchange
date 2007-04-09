@@ -9,16 +9,16 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.10.0
-Release:	2
+Version:	2.10.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	ffed2fdc7645b029bbf0c774e35e3fa0
+# Source0-md5:	3457a46a0450737d83f1c74e97c89b8f
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.10.0
+BuildRequires:	evolution-data-server-devel >= 1.10.1
 BuildRequires:	evolution-devel >= 2.10.0
 BuildRequires:	gtk+2-devel >= 2:2.10.10
 BuildRequires:	gtk-doc >= 1.8
@@ -27,7 +27,7 @@ BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libbonobo-devel >= 2.18.0
 BuildRequires:	libglade2-devel >= 2.6.0
 BuildRequires:	libgnomeprint-devel >= 2.18.0
-BuildRequires:	libgnomeui-devel >= 2.18.0
+BuildRequires:	libgnomeui-devel >= 2.18.1
 BuildRequires:	libsoup-devel >= 2.2.100
 BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	openldap-devel >= 2.3.0
