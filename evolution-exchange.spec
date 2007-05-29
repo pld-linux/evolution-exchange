@@ -9,17 +9,17 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.10.1
+Version:	2.10.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/evolution-exchange/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	3457a46a0450737d83f1c74e97c89b8f
+# Source0-md5:	a8b5fc44e23e5158c732547df434ed77
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.10.1
-BuildRequires:	evolution-devel >= 2.10.0
+BuildRequires:	evolution-data-server-devel >= 1.10.2
+BuildRequires:	evolution-devel >= 2.10.2
 BuildRequires:	gtk+2-devel >= 2:2.10.10
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	krb5-devel
@@ -34,7 +34,7 @@ BuildRequires:	openldap-devel >= 2.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.10.0
+Requires:	evolution >= 2.10.2
 Requires:	gtk+2 >= 2:2.10.10
 Obsoletes:	ximian-connector
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,6 +45,18 @@ Evolution.
 
 %description -l pl.UTF-8
 Ten pakiet dodaje do Evolution obsługę Microsoft Exchange 2000 i 2003.
+
+%package apidocs
+Summary:	Microsoft Exchange support for Evolution API documentation
+Summary(pl.UTF-8):	Dokumentacja API wsparcia Microsoft Exchange w Evolution
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+Microsoft Exchange support for Evolution API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API wsparcia Microsoft Exchange w Evolution.
 
 %prep
 %setup -q
@@ -90,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/evolution-data-server-*/camel-providers/*.so
 %attr(755,root,root) %{_libdir}/evolution/*/evolution-exchange-storage
 %{_datadir}/%{name}
-%{_gtkdocdir}/*
 %{_libdir}/bonobo/servers/*
 %{_libdir}/evolution-data-server-*/camel-providers/*.urls
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/*
