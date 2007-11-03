@@ -30,7 +30,7 @@ BuildRequires:	libgnomeprint-devel >= 2.18.0
 BuildRequires:	libgnomeui-devel >= 2.20.0
 BuildRequires:	libsoup-devel >= 2.2.100
 BuildRequires:	libxml2-devel >= 1:2.6.30
-BuildRequires:	openldap-devel >= 2.3.0
+BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,preun):	GConf2
