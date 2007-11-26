@@ -3,12 +3,12 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.12.1
-Release:	4
+Version:	2.12.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	7130d53d0b10e3475bbd1c2af1e35810
+# Source0-md5:	f5ef8d67c8ee59c9d69050f6e5e4b74c
 BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -27,6 +27,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
 Requires:	evolution >= 2.12.0
 Requires:	gtk+2 >= 2:2.12.0
@@ -57,6 +58,9 @@ Dokumentacja API wsparcia Microsoft Exchange w Evolution.
 %prep
 %setup -q
 
+sed -i -e s#sr\@Latn#sr\@latin# po/LINGUAS
+mv po/sr\@{Latn,latin}.po
+
 %build
 %{__glib_gettextize}
 %{__intltoolize}
@@ -79,8 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/camel-providers/*.{la,a}
 
-[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
-	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name}-2.12
 
 %clean
