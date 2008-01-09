@@ -3,12 +3,12 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.12.2
+Version:	2.12.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	f5ef8d67c8ee59c9d69050f6e5e4b74c
+# Source0-md5:	1bdda76724a17fb7606abcdfdb6ec170
 BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
