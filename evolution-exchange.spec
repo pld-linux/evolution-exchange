@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.28/%{name}-
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	evolution-data-server-devel >= 2.28.2
 BuildRequires:	evolution-devel >= 2.28.2
 BuildRequires:	gettext-devel
