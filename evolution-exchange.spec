@@ -24,6 +24,7 @@ BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libsoup-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
+BuildRequires:	nss-devel
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
