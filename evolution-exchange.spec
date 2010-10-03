@@ -3,22 +3,22 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.30.2
+Version:	2.32.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	6ab8102ef129bc3285c96e733f145092
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	404c1088e5f946fae4d164b6e68f46d3
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	evolution-data-server-devel >= 2.30.2.1
-BuildRequires:	evolution-devel >= 2.30.2
+BuildRequires:	evolution-data-server-devel >= 2.32.0
+BuildRequires:	evolution-devel >= 2.32.0
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.1
 BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gtk+2-devel >= 2:2.12.8
+BuildRequires:	gtk+2-devel >= 2:2.20.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libsoup-devel >= 2.4.0
@@ -30,8 +30,8 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.30.2
-Requires:	gtk+2 >= 2:2.12.8
+Requires:	evolution >= 2.32.0
+Requires:	gtk+2 >= 2:2.20.0
 Obsoletes:	ximian-connector
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -87,28 +87,28 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/{camel-providers,extensions}/*.{la,a}
 rm -f $RPM_BUILD_ROOT%{_libdir}/evolution/*/plugins/*.la
 
-%find_lang %{name}-2.30
+%find_lang %{name}-2.32
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%gconf_schema_install apps_exchange_addressbook-2.30.schemas
+%gconf_schema_install apps_exchange_addressbook-2.32.schemas
 
 %preun
-%gconf_schema_uninstall apps_exchange_addressbook-2.30.schemas
+%gconf_schema_uninstall apps_exchange_addressbook-2.32.schemas
 
-%files -f %{name}-2.30.lang
+%files -f %{name}-2.32.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_sysconfdir}/gconf/schemas/apps_exchange_addressbook-2.30.schemas
-%attr(755,root,root) %{_bindir}/exchange-connector-setup-2.30
+%{_sysconfdir}/gconf/schemas/apps_exchange_addressbook-2.32.schemas
+%attr(755,root,root) %{_bindir}/exchange-connector-setup-2.32
 %attr(755,root,root) %{_libdir}/evolution-data-server-1.2/camel-providers/libcamelexchange.so
 %attr(755,root,root) %{_libdir}/evolution-data-server-1.2/extensions/libebookbackendexchange.so
 %attr(755,root,root) %{_libdir}/evolution-data-server-1.2/extensions/libecalbackendexchange.so
-%attr(755,root,root) %{_libdir}/evolution/2.30/plugins/liborg-gnome-exchange-operations.so
-%{_libdir}/evolution/2.30/plugins/org-gnome-exchange-operations.eplug
-%{_datadir}/evolution/2.30/errors/org-gnome-exchange-operations.error
+%attr(755,root,root) %{_libdir}/evolution/2.32/plugins/liborg-gnome-exchange-operations.so
+%{_libdir}/evolution/2.32/plugins/org-gnome-exchange-operations.eplug
+%{_datadir}/evolution/2.32/errors/org-gnome-exchange-operations.error
 %{_datadir}/evolution-exchange
 %{_libdir}/evolution-data-server-1.2/camel-providers/libcamelexchange.urls
 
