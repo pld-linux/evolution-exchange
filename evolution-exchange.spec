@@ -3,18 +3,18 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	2.32.0
+Version:	2.32.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/2.32/%{name}-%{version}.tar.bz2
-# Source0-md5:	404c1088e5f946fae4d164b6e68f46d3
+# Source0-md5:	5b5317557b3791c76192a3157b983213
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	evolution-data-server-devel >= 2.32.0
-BuildRequires:	evolution-devel >= 2.32.0
+BuildRequires:	evolution-data-server-devel >= 2.32.1
+BuildRequires:	evolution-devel >= 2.32.1
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.1
 BuildRequires:	gnome-common >= 2.20.0
@@ -30,7 +30,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
-Requires:	evolution >= 2.32.0
+Requires:	evolution >= 2.32.1
 Requires:	gtk+2 >= 2:2.20.0
 Obsoletes:	ximian-connector
 # sr@Latn vs. sr@latin
