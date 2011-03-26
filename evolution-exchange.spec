@@ -29,7 +29,6 @@ BuildRequires:	nss-devel
 BuildRequires:	openldap-devel >= 2.4.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
 Requires:	evolution >= 2.32.1
 Requires:	gtk+2 >= 2:2.20.0
@@ -61,9 +60,6 @@ Dokumentacja API wsparcia Microsoft Exchange w Evolution.
 %setup -q
 %patch0 -p1
 
-sed -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
-
 %build
 %{__glib_gettextize}
 %{__intltoolize}
@@ -86,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/{camel-providers,extensions}/*.{la,a}
-rm -f $RPM_BUILD_ROOT%{_libdir}/evolution/*/plugins/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution-data-server-*/{camel-providers,extensions}/*.{la,a}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution/*/plugins/*.la
 
 %find_lang %{name}-2.32
 
