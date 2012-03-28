@@ -3,18 +3,18 @@
 Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
-Version:	3.2.3
-Release:	4
+Version:	3.4.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	d3c99042ef707776c429734ac7d467b2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	a3c2e014a2f8cbecf61b5f41744401c7
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	evolution-data-server-devel >= 3.2.3
-BuildRequires:	evolution-devel >= 3.2.3
+BuildRequires:	evolution-data-server-devel >= 3.4.0
+BuildRequires:	evolution-devel >= 3.4.0
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 2.20.0
@@ -83,38 +83,38 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution-data-server/{addressbook-backends,calendar-backends,camel-providers}/*.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution-exchange/3.2/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution-exchange/3.4/*.la
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/evolution/*/plugins/*.la
 
-%find_lang %{name}-3.2
+%find_lang %{name}-3.4
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%gconf_schema_install apps_exchange_addressbook-3.2.schemas
+%gconf_schema_install apps_exchange_addressbook-3.4.schemas
 
 %preun
-%gconf_schema_uninstall apps_exchange_addressbook-3.2.schemas
+%gconf_schema_uninstall apps_exchange_addressbook-3.4.schemas
 
-%files -f %{name}-3.2.lang
+%files -f %{name}-3.4.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_sysconfdir}/gconf/schemas/apps_exchange_addressbook-3.2.schemas
-%attr(755,root,root) %{_bindir}/exchange-connector-setup-3.2
+%{_sysconfdir}/gconf/schemas/apps_exchange_addressbook-3.4.schemas
+%attr(755,root,root) %{_bindir}/exchange-connector-setup-3.4
 %attr(755,root,root) %{_libdir}/evolution-data-server/addressbook-backends/libebookbackendexchange.so
 %attr(755,root,root) %{_libdir}/evolution-data-server/calendar-backends/libecalbackendexchange.so
 %attr(755,root,root) %{_libdir}/evolution-data-server/camel-providers/libcamelexchange.so
 %{_libdir}/evolution-data-server/camel-providers/libcamelexchange.urls
 %dir %{_libdir}/evolution-exchange
-%dir %{_libdir}/evolution-exchange/3.2
-%attr(755,root,root) %{_libdir}/evolution-exchange/3.2/libevolution-exchange-shared.so
-%attr(755,root,root) %{_libdir}/evolution-exchange/3.2/libexchange-storage.so
-%attr(755,root,root) %{_libdir}/evolution-exchange/3.2/libexchange.so*
-%attr(755,root,root) %{_libdir}/evolution-exchange/3.2/libxntlm.so*
-%attr(755,root,root) %{_libdir}/evolution/3.2/plugins/liborg-gnome-exchange-operations.so
-%{_libdir}/evolution/3.2/plugins/org-gnome-exchange-operations.eplug
-%{_datadir}/evolution/3.2/errors/org-gnome-exchange-operations.error
+%dir %{_libdir}/evolution-exchange/3.4
+%attr(755,root,root) %{_libdir}/evolution-exchange/3.4/libevolution-exchange-shared.so
+%attr(755,root,root) %{_libdir}/evolution-exchange/3.4/libexchange-storage.so
+%attr(755,root,root) %{_libdir}/evolution-exchange/3.4/libexchange.so*
+%attr(755,root,root) %{_libdir}/evolution-exchange/3.4/libxntlm.so*
+%attr(755,root,root) %{_libdir}/evolution/3.4/plugins/liborg-gnome-exchange-operations.so
+%{_libdir}/evolution/3.4/plugins/org-gnome-exchange-operations.eplug
+%{_datadir}/evolution/3.4/errors/org-gnome-exchange-operations.error
 %{_datadir}/evolution-exchange
 
 %files apidocs
