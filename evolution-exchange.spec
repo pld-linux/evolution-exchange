@@ -4,7 +4,7 @@ Summary:	Microsoft Exchange support for Evolution
 Summary(pl.UTF-8):	Wsparcie dla Microsoft Exchange w Evolution
 Name:		evolution-exchange
 Version:	3.4.4
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/evolution-exchange/3.4/%{name}-%{version}.tar.xz
